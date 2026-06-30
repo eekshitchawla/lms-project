@@ -1,0 +1,22 @@
+services:
+  app:
+    build: .
+    container_name: lms_app
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL:-jdbc:postgresql://localhost:5432/postgres}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME:-postgres}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD:-postgres}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: ${SPRING_JPA_HIBERNATE_DDL_AUTO:-update}
+      SPRING_DATASOURCE_HIKARI_CONNECTIONTIMEOUT: ${SPRING_DATASOURCE_HIKARI_CONNECTIONTIMEOUT:-30000}
+      SPRING_DATASOURCE_HIKARI_MAXIMUMPOOLSIZE: ${SPRING_DATASOURCE_HIKARI_MAXIMUMPOOLSIZE:-5}
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
