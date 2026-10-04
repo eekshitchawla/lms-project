@@ -1,0 +1,19 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"name": "catalogservice",
+		"path": "../catalogservice"
+	},
+	{
+		"name": "adminservice",
+		"path": "../adminservice"
+	}
+],
+  "settings": {
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "automatic"
+  }
+}
